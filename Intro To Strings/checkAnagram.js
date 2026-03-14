@@ -17,6 +17,7 @@ if (s1.length != s2.length) {
   for (let i = 0; i < freqArr.length; i++) {
     if (freqArr[i] != 0) {
       isAnagram = false;
+      break;
     }
   }
 }
