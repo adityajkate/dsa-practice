@@ -22,6 +22,20 @@ class LinkedList {
     this.head = newNode;
   }
 
+  deleteAtLast() {
+    if (this.head == null) return;
+    this.size--;
+    if (this.head.next == null) {
+      this.head = null;
+      return;
+    }
+    let temp = this.head;
+    while (temp.next.next !== null) {
+      temp = temp.next;
+    }
+    temp.next = null;
+  }
+
   insertAtLast(val) {
     this.size++;
     let newNode = new Node(val);
