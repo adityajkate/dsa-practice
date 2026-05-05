@@ -36,6 +36,14 @@ class LinkedList {
     temp.next = newNode;
   }
 
+  deleteAtFirst() {
+    if (this.head == null) {
+      return;
+    }
+    this.size--;
+    this.head = this.head.next;
+  }
+
   printLinkedList() {
     let temp = this.head;
     while (temp !== null) {
@@ -52,5 +60,6 @@ obj.InsertAtFirst(20);
 obj.InsertAtFirst(30);
 obj.InsertAtFirst(40);
 obj.insertAtLast(56);
+obj.deleteAtFirst();
 
 obj.printLinkedList();
