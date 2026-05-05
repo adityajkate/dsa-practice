@@ -22,6 +22,20 @@ class LinkedList {
     this.head = newNode;
   }
 
+  insertAtLast(val) {
+    this.size++;
+    let newNode = new Node(val);
+    if (this.head == null) {
+      this.head = newNode;
+      return;
+    }
+    let temp = this.head;
+    while (temp.next !== null) {
+      temp = temp.next;
+    }
+    temp.next = newNode;
+  }
+
   printLinkedList() {
     let temp = this.head;
     while (temp !== null) {
@@ -37,5 +51,6 @@ obj.InsertAtFirst(10);
 obj.InsertAtFirst(20);
 obj.InsertAtFirst(30);
 obj.InsertAtFirst(40);
+obj.insertAtLast(56);
 
 obj.printLinkedList();
