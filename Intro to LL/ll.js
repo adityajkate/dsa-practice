@@ -8,13 +8,11 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
-    this.size = 0;
   }
 
-  InsertAtFirst(val) {
-    this.size++;
-    let newNode = new Node(val);
-    if (this.head == null) {
+  insertAtFirst(val) {
+    const newNode = new Node(val);
+    if (this.head === null) {
       this.head = newNode;
       return;
     }
@@ -22,58 +20,57 @@ class LinkedList {
     this.head = newNode;
   }
 
-  deleteAtLast() {
-    if (this.head == null) return;
-    this.size--;
-    if (this.head.next == null) {
-      this.head = null;
-      return;
-    }
-    let temp = this.head;
-    while (temp.next.next !== null) {
-      temp = temp.next;
-    }
-    temp.next = null;
-  }
-
   insertAtLast(val) {
-    this.size++;
-    let newNode = new Node(val);
-    if (this.head == null) {
+    const newNode = new Node(val);
+    if (this.head === null) {
       this.head = newNode;
       return;
     }
     let temp = this.head;
-    while (temp.next !== null) {
+    while (temp.next != null) {
       temp = temp.next;
     }
     temp.next = newNode;
   }
 
-  deleteAtFirst() {
-    if (this.head == null) {
+  printLinkedList() {
+    if (this.head === null) {
+      console.log("Empty List!");
       return;
     }
-    this.size--;
-    this.head = this.head.next;
-  }
-
-  printLinkedList() {
     let temp = this.head;
-    while (temp !== null) {
+    while (temp != null) {
       process.stdout.write(temp.val + "->");
       temp = temp.next;
     }
     console.log("null");
   }
+
+  deleteAtFirst() {
+    if (this.head === null) {
+      console.log("Empty List, nothing to delete!");
+      return;
+    }
+    this.head = this.head.next;
+  }
+
+  deleteAtLast() {
+    if (this.head === null) {
+      console.log("Empty List, nothing to delete!");
+      return;
+    }
+    let temp = this.head;
+    while (temp.next.next != null) {
+      temp = temp.next;
+    }
+    temp.next = null;
+  }
 }
 
 let obj = new LinkedList();
-obj.InsertAtFirst(10);
-obj.InsertAtFirst(20);
-obj.InsertAtFirst(30);
-obj.InsertAtFirst(40);
-obj.insertAtLast(56);
-obj.deleteAtFirst();
-
+obj.insertAtFirst(1);
+obj.insertAtFirst(2);
+obj.insertAtLast(3);
+obj.printLinkedList();
+obj.deleteAtLast();
 obj.printLinkedList();
