@@ -65,6 +65,32 @@ class LinkedList {
     }
     temp.next = null;
   }
+
+  insertAtIndex(val, index) {
+    let size = 0;
+    let firstIndex = this.head;
+    while (firstIndex.next != null) {
+      firstIndex = firstIndex.next;
+      size++;
+    }
+    if (index < 0 || index > size) {
+      console.log("Not Possible!");
+      return;
+    }
+    const newNode = new Node(val);
+    if (this.head === null) {
+      this.head = newNode;
+      return;
+    }
+    let temp = this.head;
+    let count = 0;
+    while (count < index - 1) {
+      temp = temp.next;
+      count++;
+    }
+    newNode.next = temp.next;
+    temp.next = newNode;
+  }
 }
 
 let obj = new LinkedList();
@@ -73,4 +99,6 @@ obj.insertAtFirst(2);
 obj.insertAtLast(3);
 obj.printLinkedList();
 obj.deleteAtLast();
+obj.printLinkedList();
+obj.insertAtIndex(90, 1);
 obj.printLinkedList();
