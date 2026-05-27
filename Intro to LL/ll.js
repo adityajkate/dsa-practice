@@ -93,6 +93,10 @@ class LinkedList {
   }
 
   deleteAtIndex(index) {
+    if (this.head === null) {
+      console.log("Empty List");
+      return;
+    }
     let size = 0;
     let first = this.head;
     while (first.next != null) {
