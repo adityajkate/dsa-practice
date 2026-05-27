@@ -91,6 +91,31 @@ class LinkedList {
     newNode.next = temp.next;
     temp.next = newNode;
   }
+
+  deleteAtIndex(index) {
+    let size = 0;
+    let first = this.head;
+    while (first.next != null) {
+      first = first.next;
+      size++;
+    }
+
+    if (index < 0 || size <= index) {
+      console.log("Not Possible to delete the list!");
+      return;
+    }
+
+    if (index === 0) {
+      this.head = this.head.next;
+      return;
+    }
+
+    let temp = this.head;
+    for (let i = 0; i < index - 1; i++) {
+      temp = temp.next;
+    }
+    temp.next = temp.next.next;
+  }
 }
 
 let obj = new LinkedList();
@@ -101,4 +126,6 @@ obj.printLinkedList();
 obj.deleteAtLast();
 obj.printLinkedList();
 obj.insertAtIndex(90, 1);
+obj.printLinkedList();
+obj.deleteAtIndex(1);
 obj.printLinkedList();
