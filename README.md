@@ -10,3 +10,4 @@ msg me at @adiikate on IG.
 
 
 DSA makes, you think out off the world but in the world :)
+consistency is the key and discipline is the way! 
