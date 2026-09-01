@@ -1,3 +1,5 @@
+// Code for 3 Segment Tree in JavaScript
+
 process.stdin.setEncoding('utf8');
 let inputData = '';
 process.stdin.on('data', d => inputData += d);
