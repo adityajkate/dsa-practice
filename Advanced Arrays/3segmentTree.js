@@ -1,6 +1,4 @@
-
 process.stdin.setEncoding('utf8');
-
 let inputData = '';
 process.stdin.on('data', d => inputData += d);
 process.stdin.on('end', () => {
