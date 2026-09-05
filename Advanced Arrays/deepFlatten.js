@@ -12,5 +12,5 @@ function deepFlatten(arr) {
   return result;
 }
 
-console.log(deepFlatten([1, [2, 3, [4, 5, [6, 7]], 8], 9]));
-// [1, 2, 3, 4, 5, 6, 7, 8, 9]
+console.log(deepFlatten([1, [2, 3, 11 [4, 5, [6, 7]], 8], 9]));
+// [1, 2, 3, 11, 4, 5, 6, 7, 8, 9]
